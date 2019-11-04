@@ -9,8 +9,8 @@ class App extends Component {
     people : [
       {name: 'Max', age: 39 },
       {name: 'Sam', age: 34}
-    ],
-    showPersons : false,
+    ]
+    
   }
 
    handleChange = () => {
@@ -35,10 +35,15 @@ render() {
 
       <button onClick={this.togglePeople}></button>
 
-     { this.state.showPersons === true ? <div >
-     <Person names={this.state.people[0].name} age={this.state.people[0].age}/>
-     <Person names={this.state.people[1].name} age={this.state.people[1].age}/>
-      </div> : null }
+    
+
+        {this.state.people.map(names => {
+          return <Person names={names.name}/>
+        })}
+
+
+
+     
     </div>
 
   );
