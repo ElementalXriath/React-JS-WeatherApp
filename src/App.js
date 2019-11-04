@@ -1,16 +1,20 @@
-import React, {useState} from 'react';
+import React, { Component } from 'react';
+import './App.css';
+import Person from './Person/Person';
 
-
-const App = () => {
-
-const [count, SetCount] = useState(10);
-
+class App extends Component {
+render() {
+  
   return (
+
     <div className="App">
-    <button onClick={() => SetCount(currentCount => currentCount + 1)}></button>
-    <div>{count}</div>
+      <Person name="Max" age="28"/>
+      <Person name="Stephanie" age="32"/>
     </div>
-  );
+
+
+        );
+  }
 }
 
 export default App;
