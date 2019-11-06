@@ -7,10 +7,11 @@ class App extends Component {
 
 
   //Set State in Object Arrays
+  //Alwats assign ID to dynmically update with out over render in the dom
   state = {
     people : [
-      {name: 'Max', age: 39 },
-      {name: 'Sam', age: 34}
+      {id: '0', name: 'Max', age: 39 },
+      {id: '1', name: 'Sam', age: 34}
     ]
     
   };
@@ -25,8 +26,13 @@ class App extends Component {
       })
   };
 
-  deletePeople = (event) => {
-
+  //How to delete from index / You should always update state immutably. 
+  deletePeople = (singleIndex) => {
+    //Slice creates new array from orginal state
+    //const people = this.state.people.slice();
+    const people = [...this.state.people];
+    people.splice(singleIndex, 1);
+    this.setState({people: people});
   };
 
   //Conditional Render
@@ -43,10 +49,9 @@ render() {
     people = (
       <div>
         {this.state.people.map((single, index) => {
-          return <Person names={single.name}/>
+          return <Person names={single.name} click={ () => this.deletePeople(index)} key={single.id}/>
         })}
-        <Person names={this.state.people[0].name}/>
-        <Person names={this.state.people[0].name}/>
+       
       </div>
     );
   }
