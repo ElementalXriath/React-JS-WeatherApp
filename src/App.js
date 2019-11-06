@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from './Person/Person';
+import Persons from './components/Persons/Persons';
 
 
 class App extends Component {
 
 
   //Set State in Object Arrays
-  //Alwats assign ID to dynmically update with out over render in the dom
+  //Alwats assign ID to dynmically update with out over render in the
   state = {
-    people : [
+    persons : [
       {id: '0', name: 'Max', age: 39 },
       {id: '1', name: 'Sam', age: 34}
     ]
@@ -19,7 +19,7 @@ class App extends Component {
   //Handle State Change
    handleChange = (event) => {
       this.setState({
-        people : [
+        persons : [
           {name: 'Bill', age: 39 },
           {name: 'Nex', age: 34}
         ] 
@@ -27,41 +27,38 @@ class App extends Component {
   };
 
   //How to delete from index / You should always update state immutably. 
-  deletePeople = (singleIndex) => {
+  deletePersons = (personIndex) => {
     //Slice creates new array from orginal state
-    //const people = this.state.people.slice();
-    const people = [...this.state.people];
-    people.splice(singleIndex, 1);
-    this.setState({people: people});
+    //const persons = this.state.persons.slice();
+    const persons = [...this.state.persons];
+    persons.splice(personIndex, 1);
+    this.setState({persons: persons});
   };
 
   //Conditional Render
-  togglePeople = () => {
+  togglePersons = () => {
     const doesShow = this.state.showPersons;
     this.setState({ showPersons : !doesShow})
   };
 
 render() {
 
-  let people = null;
+  let persons = null;
   //Map function , pass index of array as second argurment. If you use more then 1 argument it needs to be wrapped.
   if (this.state.showPersons) {
-    people = (
+    persons = (
       <div>
-        {this.state.people.map((single, index) => {
-          return <Person names={single.name} click={ () => this.deletePeople(index)} key={single.id}/>
-        })}
-       
+        <Persons persons={this.state.persons} click={this.deletePersons}/>
       </div>
     );
   }
-  //People stored as JSX
+  //persons stored as JSX
   return (
 
     <div className="App">
     
-      <button onClick={this.togglePeople}>Toggle</button>
-      {people}
+      <button onClick={this.togglePersons}>Toggle</button>
+      {persons}
 
     </div>
 
@@ -72,6 +69,6 @@ render() {
 export default App;
 
 // Map Function
-//   {this.state.people.map(names => {
+//   {this.state.persons.map(names => {
 //  return <Person names={names.name}/>
 //})}
