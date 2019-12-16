@@ -5,15 +5,11 @@ const geocode = require('./utils/geocode');
 
 const app = express();
 
-
-
 //Routes
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     next();
   });
-
-
 
 app.get('/weather', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
@@ -39,19 +35,11 @@ app.get('/weather', (req, res) => {
             })
         })
     })
-
-  
 })  
 
 app.get('*', (req, res) => {
     res.send("404 Error")
 })
-
-
-
-
-
-
 
 // Port Listen 3000- Local
 app.listen(3000, () => {

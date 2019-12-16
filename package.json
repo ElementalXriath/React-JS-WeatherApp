@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.4.1",
+    "bootstrap-4-react": "0.0.59",
     "express": "^4.17.1",
     "react": "^16.11.0",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0",
     "request": "^2.88.0"
