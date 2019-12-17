@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MainWeather from '../src/component/Main/MainWrapper';
+import MainWeather from '../src/component/Main/MainWrapper'
+
 
 
 class App extends Component {
@@ -11,9 +12,10 @@ class App extends Component {
     currentRain: null,
     currentHumidity: null,
     currentSummary: null,
+    currentLocation: null,
     location: 'atlanta',
     value: ''
-  }
+  };
 
 
   fetchWeather() {
@@ -27,7 +29,8 @@ class App extends Component {
           currentTemp: data.forecast.currentTemp,
           currentRain: data.forecast.currentRain,
           currentHumidity: data.forecast.currentHumidity,
-          currentHumidity: data.forecast.currentSummary
+          currentSummary: data.forecast.currentSummary,
+          currentLocation: data.location
 
         })
       )
@@ -35,17 +38,15 @@ class App extends Component {
       .catch(error => this.setState({ error, isLoading: false }));
   };
 
-  componentDidMount() {
+  componentWillMount() {
     this.fetchWeather()
   };
   
   handleChange = (event) => {
-    this.setState({value: event.target.value});
+    this.setState({location: event.target.value});
   }
 
   handleSubmit = () => {
-    const newLocation = this.state.value;
-    this.setState({location: newLocation})
     this.fetchWeather()
   }
 
@@ -55,16 +56,12 @@ class App extends Component {
       return (
 
         <div className="App"> 
-        <nav class="navbar navbar-light bg-light">
-          <form class="form-inline">
-            <input class="form-control mr-sm-2"  type="text" value={this.state.value} onChange={this.handleChange} placeholder="Search" aria-label="Search" />
-            <button class="btn btn-outline-success my-2 my-sm-0 float-left" onClick={this.handleSubmit}>Search</button>
-          </form>
+         <nav className="navbar navbar-light bg-light">
+          <input onChange={this.handleChange}/>
+          <button onClick={this.handleSubmit}>Click</button>
         </nav>
-
-          <MainWeather />
-         
-         
+        <MainWeather loc={this.state.currentLocation} temp={this.state.currentTemp}/>
+              
         </div>
 
       );

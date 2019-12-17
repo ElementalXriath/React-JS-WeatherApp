@@ -12,7 +12,7 @@ app.use((req, res, next) => {
   });
 
 app.get('/weather', (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
+
     if (!req.query.address) {
         return res.send({
             error: 'Enter Address'
