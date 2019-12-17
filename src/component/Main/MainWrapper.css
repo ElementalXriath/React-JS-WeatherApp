@@ -2,6 +2,19 @@
     height: 100px;
     margin-top: 14px;
     border-radius: 12px;
-    
+    padding: 20px;
+}
 
+.Font {
+    font-family: 'Abel', sans-serif;
+    font-size: 24px;
+}
+
+.Line {
+    margin-bottom: 2px;
+}
+
+.Current {
+    font-weight: 300;
+    color: dodgerblue;
 }

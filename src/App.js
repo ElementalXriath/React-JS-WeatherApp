@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainWeather from '../src/component/Main/MainWrapper'
-
+import NavBar from '../src/layout/NavBar/NavBar';
 
 
 class App extends Component {
@@ -13,7 +13,8 @@ class App extends Component {
     currentHumidity: null,
     currentSummary: null,
     currentLocation: null,
-    location: 'atlanta',
+    currentWindSpeed: null,
+    location: 'Atlanta',
     value: ''
   };
 
@@ -30,7 +31,8 @@ class App extends Component {
           currentRain: data.forecast.currentRain,
           currentHumidity: data.forecast.currentHumidity,
           currentSummary: data.forecast.currentSummary,
-          currentLocation: data.location
+          currentLocation: data.location,
+          currentWindSpeed: data.forecast.currentWindSpeed
 
         })
       )
@@ -38,29 +40,34 @@ class App extends Component {
       .catch(error => this.setState({ error, isLoading: false }));
   };
 
+  // On Load ->
   componentWillMount() {
     this.fetchWeather()
   };
-  
+  // Change Location in Fetch ->
   handleChange = (event) => {
     this.setState({location: event.target.value});
-  }
-
+  };
+  // Run new Req ->
   handleSubmit = () => {
     this.fetchWeather()
-  }
+  };
 
   
   render() {
   
       return (
 
-        <div className="App"> 
-         <nav className="navbar navbar-light bg-light">
-          <input onChange={this.handleChange}/>
-          <button onClick={this.handleSubmit}>Click</button>
-        </nav>
-        <MainWeather loc={this.state.currentLocation} temp={this.state.currentTemp}/>
+        <div className="App BgColor"> 
+         <NavBar click={this.handleSubmit} change={this.handleChange}/>
+          <MainWeather 
+          loc={this.state.currentLocation} 
+          temp={this.state.currentTemp} 
+          humidity={this.state.currentHumidity}
+          summary={this.state.currentSummary}
+          windSpeed={this.state.currentWindSpeed}
+          rain={this.state.currentRain}
+          />
               
         </div>
 
