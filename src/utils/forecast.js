@@ -15,7 +15,8 @@ const forecast = (latitude, longitude, callback) => {
                     currentHumidity: response.body.currently.humidity,
                     currentSummary: response.body.currently.summary,
                     currentIcon: response.body.currently.icon,
-                    currentWindSpeed: response.body.currently.windSpeed
+                    currentWindSpeed: response.body.currently.windSpeed,
+                    lookAhead: response.body.minutely.summary
 
                 });
             }

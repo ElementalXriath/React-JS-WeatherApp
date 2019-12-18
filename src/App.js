@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainWeather from '../src/component/Main/MainWrapper'
 import NavBar from '../src/layout/NavBar/NavBar';
+import LookAhead from '../src/component/LookingAhead/LookingAhead';
 
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
     currentSummary: null,
     currentLocation: null,
     currentWindSpeed: null,
+    lookAhead: null,
     location: 'Atlanta',
     value: ''
   };
@@ -32,7 +34,8 @@ class App extends Component {
           currentHumidity: data.forecast.currentHumidity,
           currentSummary: data.forecast.currentSummary,
           currentLocation: data.location,
-          currentWindSpeed: data.forecast.currentWindSpeed
+          currentWindSpeed: data.forecast.currentWindSpeed,
+          lookAhead:  data.forecast.lookAhead
 
         })
       )
@@ -58,7 +61,7 @@ class App extends Component {
   
       return (
 
-        <div className="App BgColor"> 
+        <div className="App BgColor BodyScale"> 
          <NavBar click={this.handleSubmit} change={this.handleChange}/>
           <MainWeather 
           loc={this.state.currentLocation} 
@@ -68,6 +71,7 @@ class App extends Component {
           windSpeed={this.state.currentWindSpeed}
           rain={this.state.currentRain}
           />
+          <LookAhead look={this.state.lookAhead} />
               
         </div>
 

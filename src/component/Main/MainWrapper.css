@@ -1,13 +1,15 @@
 .Wrapper {
     height: 100px;
-    margin-top: 14px;
-    border-radius: 12px;
+    margin: 8px;
+    border-radius: 4px;
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.973);
 }
 
 .Font {
     font-family: 'Abel', sans-serif;
     font-size: 24px;
+    font-weight: 600;
 }
 
 .Line {
@@ -16,5 +18,13 @@
 
 .Current {
     font-weight: 300;
-    color: dodgerblue;
+    color: blue;
+}
+
+.DataTags {
+    font-weight: 200;
+}
+
+.More {
+    width: 80px;
 }
