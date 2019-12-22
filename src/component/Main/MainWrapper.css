@@ -1,5 +1,5 @@
 .Wrapper {
-    height: 100px;
+    height: 114px;
     margin: 8px;
     border-radius: 4px;
     padding: 20px;
@@ -10,6 +10,7 @@
     font-family: 'Abel', sans-serif;
     font-size: 24px;
     font-weight: 600;
+    color: white;
 }
 
 .Line {
@@ -17,8 +18,8 @@
 }
 
 .Current {
-    font-weight: 300;
-    color: blue;
+    font-weight: 400;
+    color: rgb(0, 119, 255);
 }
 
 .DataTags {
@@ -27,4 +28,25 @@
 
 .More {
     width: 80px;
+}
+
+.MainIcon {
+    font-size: 150px;
+}
+
+.LowMargin {
+    margin-top: -15px;
+}
+
+.HighMargin {
+    margin-top: 60px;
+}
+
+.TempFont {
+    font-size: 50px;
+}
+
+.SummaryFont {
+    font-size: 18px;
+    color: white;
 }

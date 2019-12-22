@@ -11,7 +11,9 @@
     "react-dom": "^16.11.0",
     "react-icons": "^3.8.0",
     "react-scripts": "3.2.0",
-    "request": "^2.88.0"
+    "react-sidebar": "^3.0.2",
+    "request": "^2.88.0",
+    "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
     "start": "react-scripts start",

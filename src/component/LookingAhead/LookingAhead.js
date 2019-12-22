@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaThermometerFull, FaCloudSun, FaCloudSunRain, FaCloudMeatball, FaSmog, FaTint } from "react-icons/fa";
+
+import { FaCloudSunRain } from "react-icons/fa";
 import './LookingAhead.css'
 
 const lookAhead = (props) => (
@@ -9,7 +10,7 @@ const lookAhead = (props) => (
             <div className="col-8">
                 <div className="card shadow CardH">
                     <div className="card-body">
-                    <h5 className="font"><span className="Current">Looking Ahead</span><hr className="mb-2 mt-1"></hr> {props.look}</h5> 
+                    <h5 className=""><span className="Current Font">Looking Ahead</span><hr className="mb-2 mt-1"></hr> {props.look}</h5> 
                     </div>
                 </div>
             </div>
@@ -22,6 +23,7 @@ const lookAhead = (props) => (
             </div>
         </div>
     </div>
+
 );
 
 export default lookAhead;

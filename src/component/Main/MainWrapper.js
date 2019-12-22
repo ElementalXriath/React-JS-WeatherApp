@@ -19,9 +19,23 @@ const mainWrapper = (props) => {
     
     //Return -> 
    return <div className="container text-center p-2">
-            <h4 className="text-left Font mt-3">{summaryIcon} {props.loc}   {props.temp} &deg; F
-            <hr className="Line"/><span className="Current">Current {time}:</span> {props.summary} </h4>
-                <div className="card Wrapper p-2 pt-4 shadow">
+            <h4 className="text-left Font mt-3">{summaryIcon} {props.loc}  
+            <hr className="Line"/></h4>
+
+            <div className="row LowMargin">
+                <div className="col">
+                    <span className="MainIcon">{summaryIcon}</span>
+                </div>
+                <div className="col HighMargin">
+                    <span className="text-light TempFont"> {props.temp} &deg; F</span> <br></br>
+                    <span className="SummaryFont"> {props.summary}</span>
+                   
+                    
+                </div>
+            </div>
+
+
+                <div className="card Wrapper pt-4 shadow bg-transparent text-light p-0">
                     <div className="row h6">
 
                         <div className="col">
@@ -46,6 +60,7 @@ const mainWrapper = (props) => {
                        
                     </div>           
                 </div>
+               
         </div>
 
 };

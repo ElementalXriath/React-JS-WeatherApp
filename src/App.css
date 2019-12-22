@@ -1,26 +1,10 @@
-.SearchBar {
-    width: 500px;
-    border-radius: 2px;
-    align-content: right;
-}
-
-.SearchBtn {
-    width:80px;
-    border-radius: 2px;
-    height: 45;
-}
-
-.Width {
-    width: 600px;
-}
-
 .BgColor {
-    background: #2980B9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #FFFFFF, #6DD5FA, rgba(47, 149, 216, 0.781)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: -webkit-linear-gradient(to top, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
 }
 
 .BodyScale {
-    margin-top: 100px;
+   
+    height: 100%;
 }
+

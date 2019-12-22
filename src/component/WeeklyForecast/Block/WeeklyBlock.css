@@ -1,0 +1,19 @@
+.Temp {
+    font-size: 14px;
+}
+
+.Day {
+    font-size: large;
+}
+
+.Icon {
+    font-size: 100;
+}
+
+.NoBorder {
+    border: none;
+}
+
+.Low {
+    font-weight: 100;
+}
