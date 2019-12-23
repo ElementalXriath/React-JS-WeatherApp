@@ -82,7 +82,7 @@ class App extends Component {
         <div className="text-center row">
           {this.state.weekly.map((day, index) => {
             return <Daily 
-              day={day.day}
+              day={day.data}
               tempHigh={day.tempHigh}
               tempLow={day.tempLow}
               percip={day.precipProbability}
