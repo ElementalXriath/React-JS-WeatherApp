@@ -1,11 +1,12 @@
-
 const express = require('express');
+
+// GeoCoding - Forecast - DarkSky Api
 const forecast = require('./utils/forecast');
 const geocode = require('./utils/geocode');
 
 const app = express();
 
-//Routes
+//Routes - > Set Full Header Access
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     next();
