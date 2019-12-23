@@ -1,8 +1,3 @@
-Component 1 : Hooks Practice 
-Note - Only use functions.
+Weather App , Modile First  Web , DarkSky Api , MoonPhases, News, Horroscopes
 
-List and Arrays using Map()
-
-Index with Keys 
-
-Conditional Render
+React - Express
