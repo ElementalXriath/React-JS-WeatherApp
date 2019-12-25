@@ -1,6 +1,6 @@
 import React from 'react' ;
 
-import '../../../src/App.css';
+import './MainView.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import MainWeather from '../../component/Main/MainWrapper'
@@ -11,11 +11,10 @@ const MainView = () => {
 
     const [currentWeather, setCurrentWeather] =  React.useState({});
     const [dailyWeather, setDailyWeather] = React.useState([]);
-    const [currentLocation, setCurrentLocation] = React.useState("")
+    const [currentLocation, setCurrentLocation] = React.useState('')
     const [weatherLocation, setWeatherLocation] = React.useState('Atlanta');
     const [search, setSearchLocation] = React.useState('');
 
-   
     const fetchWeather = () => {
         fetch('http://localhost:3000/weather?address=' + weatherLocation)
           .then(response => response.json())         
@@ -29,31 +28,32 @@ const MainView = () => {
      
       React.useEffect(() => {
         fetchWeather()
-      }, [weatherLocation])
+      }, [weatherLocation]);
 
       const handleChange = (event) => {
         setSearchLocation(event.target.value)
-      }
+      };
 
       const handleSubmit = () => {
         setWeatherLocation(search)
-      }
-     
-   
+      };
+
     
+      
+      
       let daily = (
         <div className="text-center row">
           {dailyWeather.slice(0, 7).map((day, index) => {
-            const days = ['M']
+          
             return <Daily 
               tempHigh={day.temperatureHigh}
               tempLow={day.temperatureLow}
-              percip={day.precipProbability}          
+              percip={day.precipProbability}
+              day={	Math.floor(new Date(day.time*1000).getDay())}           
             />
           })}
         </div>
-      )
-
+      );
 
     return (
               <div>
