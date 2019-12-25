@@ -10,8 +10,7 @@ const forecast = (latitude, longitude, callback) => {
                 callback('Was not found', undefined)
             } else {
                 callback(undefined, {
-                    current: response.body.currently,
-                    lookAhead: response.body.minutely.summary,
+                    current: response.body.currently,   
                     dailySummary: response.body.daily.summary,
                     dailyData: response.body.daily.data                           
                 });
