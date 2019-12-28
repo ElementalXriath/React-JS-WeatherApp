@@ -2,7 +2,7 @@ const express = require('express');
 
 // GeoCoding - Forecast - DarkSky Api
 const forecast = require('./api/forecast');
-const geocode = require('./utils/geocode');
+const geocode = require('../backend1/utils/geocode');
 
 const app = express();
 
@@ -35,13 +35,13 @@ app.get('/weather', (req, res) => {
             })
         })
     })
-})  
+});  
 
 app.get('*', (req, res) => {
     res.send("404 Error")
-})
+});
 
 // Port Listen 3000- Local
 app.listen(3000, () => {
     console.log('Server Started')
-})
+});
