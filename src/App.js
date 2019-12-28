@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import MainView from './Views/MainViewClass/MainView';
@@ -18,7 +19,7 @@ class App extends Component {
           <BottomNav/>   
         </div>
 
-      );
+      )
     }
   }
 

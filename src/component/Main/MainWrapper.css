@@ -14,7 +14,7 @@
 }
 
 .Line {
-    margin-bottom: 2px;
+    margin-bottom: 7px;
 }
 
 .Current {
@@ -31,7 +31,7 @@
 }
 
 .MainIcon {
-    font-size: 150px;
+    font-size: 40px;
 }
 
 .LowMargin {
@@ -43,10 +43,14 @@
 }
 
 .TempFont {
-    font-size: 50px;
+    font-size: 28px;
 }
 
 .SummaryFont {
     font-size: 18px;
     color: white;
+}
+
+.Degrees {
+    font-size: 25px;
 }

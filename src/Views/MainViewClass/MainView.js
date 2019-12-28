@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import MainWeather from '../../component/Main/MainWrapper'
 import NavBar from '../../layout/NavBar/NavBar';
-import Daily from '../../component/WeeklyForecast/Block/WeeklyBlock';
+import DailyBox from '../../component/WeeklyForecast/WeeklyBox/WeeklyBox';
 
 const MainView = () => {
 
@@ -37,24 +37,9 @@ const MainView = () => {
       const handleSubmit = () => {
         setWeatherLocation(search)
       };
-
-    
-      
-      
-      let daily = (
-        <div className="text-center row">
-          {dailyWeather.slice(0, 7).map((day, index) => {
-          
-            return <Daily 
-              tempHigh={day.temperatureHigh}
-              tempLow={day.temperatureLow}
-              percip={day.precipProbability}
-              day={	Math.floor(new Date(day.time*1000).getDay())}           
-            />
-          })}
-        </div>
-      );
-
+  
+      // Daily Block
+  
     return (
               <div>
                       <NavBar 
@@ -72,7 +57,7 @@ const MainView = () => {
                       />
         
                       <div className="container">
-                        {daily}
+                        <DailyBox data={dailyWeather}/>
                       </div>
             </div>
         

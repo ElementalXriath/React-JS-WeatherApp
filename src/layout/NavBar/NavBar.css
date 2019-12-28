@@ -1,12 +1,10 @@
 .SearchBar {
-    width: 400px;
-    border-radius: 2px;
-    align-content: right;
+    border-radius: 2px; 
 }
 
 .SearchBarIn {
     width: 200px;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .SearchBtn {
@@ -15,10 +13,9 @@
     height: 45;
 }
 
-.NavBarSize {
-    height: 50px;
-}
 
-.Width {
-    width: 600px;
+
+
+.Color {
+    background-color: rgba(0, 0, 0, 0.521);
 }

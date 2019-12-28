@@ -3,11 +3,11 @@
 }
 
 .Day {
-    font-size: large;
+    font-size: 14px;
 }
 
 .Icon {
-    font-size: 100;
+    font-size: 22px;
 }
 
 .NoBorder {
@@ -16,4 +16,8 @@
 
 .Low {
     font-weight: 100;
+}
+
+.Box {
+    border-radius: 16px;
 }
