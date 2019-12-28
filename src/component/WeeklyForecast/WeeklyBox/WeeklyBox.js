@@ -21,7 +21,7 @@ const weeklyBox = (props) => {
     return (
         <div className="mt-5 ">
             <div className="card Label">
-                <h5>7 Day</h5>
+                <h5>7 Day </h5>
             </div>
 
             
