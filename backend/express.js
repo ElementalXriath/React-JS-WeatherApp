@@ -2,7 +2,7 @@ const express = require('express');
 
 // GeoCoding - Forecast - DarkSky Api
 const forecast = require('./api/forecast');
-const geocode = require('../backend1/utils/geocode');
+const geocode = require('../backend/utils/geocode');
 
 const app = express();
 
