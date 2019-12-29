@@ -5,7 +5,7 @@ import './MainView.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // COMPONENTS
-import MainWeather from '../../component/Main/MainWrapper'
+import MainWeather from '../../component/Currently/MainWrapper'
 import NavBar from '../../layout/NavBar/NavBar';
 import DailyBox from '../../component/WeeklyForecast/WeeklyBox/WeeklyBox';
 import Tabs from '../../component/Tabs/Tabs'
@@ -26,7 +26,7 @@ const MainView = () => {
     const [search, setSearchLocation] = React.useState('');
 
     // UI Visibility
-    const [toggleCurrent, setToggleCurrent] = React.useState('');
+    const [toggleCurrent, setToggleCurrent] = React.useState('Currently');
 
     const fetchWeather = () => {
         fetch('http://localhost:3000/weather?address=' + weatherLocation)
@@ -54,11 +54,18 @@ const MainView = () => {
 
       // UI TAB - Controller
 
-      let tab = <div>Currently</div>;
+      let tab = null;
 
       switch (toggleCurrent) {
         case 'Currently':
-          tab = <div>Currently</div>;
+          tab =  <MainWeather 
+          loc={currentLocation} 
+          temp={currentWeather.temperature} 
+          humidity={currentWeather.humidity}
+          summary={currentWeather.summary}
+          windSpeed={currentWeather.windSpeed}
+          rain={currentWeather.precipProbability}
+        /> ;
           break;
         case 'Weekly':
           tab = <DailyBox data={dailyWeather}/>;
@@ -96,15 +103,6 @@ const MainView = () => {
                       switchRadar={tabSwitchRadar}
                       />
                    
-                      <MainWeather 
-                        loc={currentLocation} 
-                        temp={currentWeather.temperature} 
-                        humidity={currentWeather.humidity}
-                        summary={currentWeather.summary}
-                        windSpeed={currentWeather.windSpeed}
-                        rain={currentWeather.precipProbability}
-                      />
-
                       {/* UI State - tab */}
                       <div className="container">
                         {tab}

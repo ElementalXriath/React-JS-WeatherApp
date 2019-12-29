@@ -1,6 +1,10 @@
 import React from 'react';
 import './WeeklyBlock.css';
-import { FaThermometerFull, FaCloudSun, FaCloudSunRain, FaCloudMeatball, FaSmog, FaTint } from "react-icons/fa";
+import { WiFahrenheit } from "weather-icons-react";
+import TempGauge from '../TempGauge/TampGauge';
+
+import iconManager from '../../../utils/IconManager/IconManagerWeekly';
+
 
 const weeklyBlock = (props) => {
 
@@ -28,41 +32,25 @@ const weeklyBlock = (props) => {
           day = "Sat";
       };
 
-      const tempMeter = {
-        color: 'white',
-        backgroundColor: 'blue',
-        width: `${props.tempHigh}%`,
-        marginRight: 0,
-        paddingLeft: 'auto'
-    };
-
+      let summaryIcon = iconManager(props.icon);
     
-
- 
 return  (
-              <div className="m-0 ml-4 mr-0 mw-100 card p-1 bg-transparent text-white NoBorder">
+              <div className="m-0 ml-1 mr-0 mw-100 card p-1 bg-transparent text-white NoBorder">
                   <div className="card Box p-1 m-0">
                       <div className="row p-1">
 
-                          <div className="col-1">
-                              <span className="h4"><FaCloudMeatball/> </span>
-                          </div>
-
                           <div className="col-3">
-                              <span className="Day">{day}</span>
+                              <span className="h4">{summaryIcon}</span><br></br> <span className="Day">{day}</span>
                           </div>
 
+                         
                           <div className="col-2"> 
                               {Math.floor(props.percip)}%
                               
                           </div>
                           
-                          <div className="col-6 text-right">
-                          <span className="Temp Low ml-3 float-right">L {Math.floor(props.tempLow)}&deg;</span>
-                            <div style={tempMeter} className="float-right TempGauge">
-                                <span className="Temp Low float-left">{Math.floor(props.tempHigh)}&deg; H</span>
-                            </div>
-                            
+                          <div className="col-7 text-right">
+                           <span><span className="TempLabel">Temp</span> {props.tempHigh}<WiFahrenheit size={24} color='white' /></span> <br></br> <TempGauge value={props.tempHigh} />
                           </div>   
 
                         </div>

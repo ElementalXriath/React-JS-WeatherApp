@@ -12,9 +12,9 @@ const useStyles = makeStyles({
   },
 });
 
-const CenteredTabs = (props) => {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const CenteredTabs = (props) => {
+    const classes = useStyles();
+    const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -31,7 +31,7 @@ const CenteredTabs = (props) => {
       >
         <Tab label="Currently" onClick={props.switchCurrently}/>
         <Tab label="Weekly" onClick={props.switchWeekly}/>
-        <Tab label="Hourly" onClick={props.switchRadar}/>
+        <Tab label="Radar" onClick={props.switchRadar}/>
       </Tabs>
     </Paper>
   );

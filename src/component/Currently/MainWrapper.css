@@ -31,8 +31,8 @@
 }
 
 .MainIcon {
-    font-size: 40px;
-    margin: -10px;
+    font-size: 50px;
+    margin: -20px;
 }
 
 .LowMargin {
@@ -48,7 +48,7 @@
 }
 
 .SummaryFont {
-    font-size: 18px;
+    font-size: 14px;
     color: white;
 }
 

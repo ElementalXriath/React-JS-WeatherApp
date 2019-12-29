@@ -3,6 +3,8 @@ import React from 'react';
 // CUSTOM - CSS
 import './MainWrapper.css';
 
+import ScrollMenu from './SrollMenu/SrollMenu';
+
 // UTILS
 import iconManager from '../../utils/IconManager/IconManager';
 
@@ -25,7 +27,7 @@ const mainWrapper = (props) => {
                                 <span className="MainIcon"> {summaryIcon} </span> 
                                 {props.temp}<span className="Degrees">&deg;</span>
                             </span> <br></br>
-                            <span className="SummaryFont"> {props.summary}</span>               
+                            <span className="SummaryFont">Feels Like : 34.5 </span>               
                         </div>
                         <div className="col-8 p-0 text-white">
                             <div className="row h6">                           
@@ -45,11 +47,14 @@ const mainWrapper = (props) => {
                                 </div>                  
                             </div>
                             <hr></hr>
-                            <div>
-                                Current
+                            <div className="mt-0">
+                            {props.summary} 
                             </div>   
                         </div>                    
-                    </div>       
+                    </div>
+                    <div className="container mt-5">
+                        <ScrollMenu/>
+                    </div>    
                 </div>
         ) 
 

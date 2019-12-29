@@ -16,10 +16,7 @@
     background-color: rgba(26, 26, 26, 0.534);
 }
 
-.TempGauge {
-    border-radius: 8px;
-    box-shadow: 0px 1px 3px aqua;
-    padding: 1.5px;
-    padding-right: 10px;
-    padding-left: 10px;
+.TempLabel {
+    font-size: 10px;
+    font-weight: 300;
 }

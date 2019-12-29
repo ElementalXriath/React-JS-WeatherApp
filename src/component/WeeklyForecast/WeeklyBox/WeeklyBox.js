@@ -12,7 +12,8 @@ const weeklyBox = (props) => {
               tempLow={day.temperatureLow}
               percip={day.precipProbability}
               day={	Math.floor(new Date(day.time*1000).getDay())}
-              summary={day.summary}                  
+              summary={day.summary}
+              icon={day.icon}                  
             />
           })}
         </div>
@@ -21,7 +22,6 @@ const weeklyBox = (props) => {
     return (
         <div className="mt-1 p-0 pb-3">
             <div className="card Label shadow">
-                <h6 className="ml-5 mt-1 mb-0">7 Day</h6>
                 <hr className="mb-0"></hr>
                 {daily}
             </div>
