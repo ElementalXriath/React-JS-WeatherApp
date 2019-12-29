@@ -5,29 +5,28 @@ import './WeeklyBox.css';
 const weeklyBox = (props) => {
 
     let daily = (
-        <div className="">
+        <div>
           {props.data.slice(0, 7).map((day, index) => {
-          
             return <Daily 
               tempHigh={day.temperatureHigh}
               tempLow={day.temperatureLow}
               percip={day.precipProbability}
-              day={	Math.floor(new Date(day.time*1000).getDay())}           
+              day={	Math.floor(new Date(day.time*1000).getDay())}
+              summary={day.summary}                  
             />
           })}
         </div>
       );
 
     return (
-        <div className="mt-5 ">
-            <div className="card Label">
-                <h5>7 Day </h5>
+        <div className="mt-1 p-0 pb-3">
+            <div className="card Label shadow">
+                <h6 className="ml-5 mt-1 mb-0">7 Day</h6>
+                <hr className="mb-0"></hr>
+                {daily}
             </div>
-
-            
-            {daily}
         </div>
-    )
+    );
 }
 
 export default weeklyBox;

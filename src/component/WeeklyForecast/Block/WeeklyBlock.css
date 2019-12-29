@@ -1,23 +1,25 @@
 .Temp {
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .Day {
     font-size: 14px;
 }
 
-.Icon {
-    font-size: 22px;
-}
-
 .NoBorder {
     border: none;
 }
 
-.Low {
-    font-weight: 100;
+.Box {
+    border-radius: 8px;
+    background-color: rgba(26, 26, 26, 0.534);
 }
 
-.Box {
-    border-radius: 16px;
+.TempGauge {
+    border-radius: 8px;
+    box-shadow: 0px 1px 3px aqua;
+    padding: 1.5px;
+    padding-right: 10px;
+    padding-left: 10px;
 }

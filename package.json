@@ -17,7 +17,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-test-render": "^1.1.2",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "weather-icons-react": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -9,7 +9,7 @@
 .Font {
     font-family: 'Abel', sans-serif;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 200;
     color: white;
 }
 
@@ -32,6 +32,7 @@
 
 .MainIcon {
     font-size: 40px;
+    margin: -10px;
 }
 
 .LowMargin {

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
+//CSS
 import './App.css';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+//Components
 import MainView from './Views/MainViewClass/MainView';
-import BottomNav from './layout/BottomNav/BottomNav';
-
 
 class App extends Component {
 
@@ -16,7 +15,6 @@ class App extends Component {
 
         <div className="App BgColor BodyScale"> 
           <MainView/>  
-          <BottomNav/>   
         </div>
 
       )

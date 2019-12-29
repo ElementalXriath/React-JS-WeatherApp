@@ -9,6 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 
+
 const useStyles = makeStyles(theme => ({
 
   root: {
@@ -81,7 +82,7 @@ const SearchAppBar = (props) =>{
           <Typography className={classes.title} variant="h6" noWrap>
                 Sky Watch
           </Typography>
-          <Button variant="contained" color="primary" onClick={props.click}>
+          <Button variant="contained" color="primary" onClick={props.click} className="m-1">
             Search
           </Button>
           <div className={classes.search}>
@@ -89,6 +90,7 @@ const SearchAppBar = (props) =>{
               <SearchIcon />
             </div>
             <InputBase
+              value={props.value}
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
