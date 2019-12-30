@@ -3,13 +3,17 @@ import React from 'react';
 // CUSTOM - CSS
 import './MainWrapper.css';
 
-import ScrollMenu from './SrollMenu/SrollMenu';
+// COMPONENTS
+
+import CurrentStats from '../CurrentStats/CurrentStats';
 
 // UTILS
 import iconManager from '../../utils/IconManager/IconManager';
 
 // UI-ICONS
-import { WiRain, WiStrongWind, WiHumidity } from "weather-icons-react";
+import { WiHumidity, WiStrongWind, WiRain } from 'weather-icons-react';
+
+import { FaCrosshairs } from 'react-icons/fa';
 
 const mainWrapper = (props) => {
 
@@ -19,7 +23,7 @@ const mainWrapper = (props) => {
     //Return -> 
     return (
                 <div className="container text-center p-2">
-                    <h4 className="text-left Font mt-3">{props.loc}</h4>
+                    <h4 className="text-left Font mt-3"><FaCrosshairs className="h6"/> {props.loc}</h4>
                     <hr className="Line"/>
                     <div className="row">
                         <div className="col-4 ml-0">           
@@ -27,7 +31,7 @@ const mainWrapper = (props) => {
                                 <span className="MainIcon"> {summaryIcon} </span> 
                                 {props.temp}<span className="Degrees">&deg;</span>
                             </span> <br></br>
-                            <span className="SummaryFont">Feels Like : 34.5 </span>               
+                            <span className="SummaryFont">Feels Like : {props.appTemp} </span>               
                         </div>
                         <div className="col-8 p-0 text-white">
                             <div className="row h6">                           
@@ -52,8 +56,16 @@ const mainWrapper = (props) => {
                             </div>   
                         </div>                    
                     </div>
-                    <div className="container mt-5">
-                        <ScrollMenu/>
+                    <div className="container mt-5 p-0 ml-0">
+                    
+                        <div className="row mt-3">
+                            <div className="col shadow">
+                            <CurrentStats appTemp={props.appTemp} dewPoint={props.dewPoint} pressure={props.pressure}/>
+                            </div>
+                            <div className="col">
+                            <CurrentStats/>
+                            </div>         
+                        </div>         
                     </div>    
                 </div>
         ) 

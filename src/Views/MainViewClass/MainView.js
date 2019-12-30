@@ -5,7 +5,7 @@ import './MainView.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // COMPONENTS
-import MainWeather from '../../component/Currently/MainWrapper'
+import MainWeather from '../../component/Currently/Current';
 import NavBar from '../../layout/NavBar/NavBar';
 import DailyBox from '../../component/WeeklyForecast/WeeklyBox/WeeklyBox';
 import Tabs from '../../component/Tabs/Tabs'
@@ -65,10 +65,14 @@ const MainView = () => {
           summary={currentWeather.summary}
           windSpeed={currentWeather.windSpeed}
           rain={currentWeather.precipProbability}
+          appTemp={currentWeather.apparentTemperature}
+          dewPoint={currentWeather.dewPoint}
+          pressure={currentWeather.pressure}
+          
         /> ;
           break;
         case 'Weekly':
-          tab = <DailyBox data={dailyWeather}/>;
+          tab = <DailyBox data={dailyWeather} loc={currentLocation}/>;
           break;
         case 'Radar':
            tab = <div>Radar</div>;

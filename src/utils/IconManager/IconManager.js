@@ -14,13 +14,16 @@ const iconManager = (data) => {
         summaryIcon = <WiDayRainMix size={70} color='white' />
             break;
         case "Possible Drizzle":
-        summaryIcon = <div></div>
+        summaryIcon = <WiDayRainMix size={70} color='white' />
             break;
         case "Mostly Cloudy":
         summaryIcon = <WiCloudy size={70} color='white' />
             break;
         case "Partly Cloudy":
         summaryIcon = <WiDayCloudy size={70} color='white' />
+            break;
+        case 'Clear':
+            summaryIcon = <WiDaySunnyOvercast size={70} color='white' />
             break;
       }
 
