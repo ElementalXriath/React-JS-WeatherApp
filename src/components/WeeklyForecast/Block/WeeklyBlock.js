@@ -1,6 +1,6 @@
 import React from 'react';
 import './WeeklyBlock.css';
-import { WiFahrenheit } from "weather-icons-react";
+import { WiFahrenheit, WiRaindrop } from "weather-icons-react";
 import TempGauge from '../TempGauge/TampGauge';
 
 import iconManager from '../../../utils/IconManager/IconManagerWeekly';
@@ -40,13 +40,13 @@ return  (
                       <div className="row p-1">
 
                           <div className="col-3">
-                              <span className="h4">{summaryIcon}</span><br></br> <span className="Day">{day}</span>
+                              <span className="h6">{summaryIcon}</span><br></br> <span className="Day">{day}</span>
                           </div>
 
                          
                           <div className="col-2"> 
-                              {Math.floor(props.percip)}%
-                              
+                          <WiRaindrop size={30} color='white' />
+                              <span className="h6">{Math.floor(props.percip)}%</span>              
                           </div>
                           
                           <div className="col-7 text-right">

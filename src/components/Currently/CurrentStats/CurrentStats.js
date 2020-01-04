@@ -10,10 +10,12 @@ import { WiBarometer, WiFog, WiThermometer } from "react-icons/wi";
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
+    height: '250px',
     maxWidth: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.521)',
+    backgroundColor: 'rgba(0, 0, 0, 0.60)',
     color: 'dark',
-    borderRadius: 8
+    borderRadius: 3,
+    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.521)'
   },
   secondary: {
       color: 'white',

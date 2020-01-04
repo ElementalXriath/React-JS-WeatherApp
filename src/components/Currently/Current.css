@@ -24,6 +24,7 @@
 
 .DataTags {
     font-weight: 200;
+    font-size: 14px;
 }
 
 .More {
@@ -58,4 +59,16 @@
 
 .ScrollBox {
     background-color: rgba(0, 0, 0, 0.521);
+}
+
+.StatsSize {
+    height: 400px;
+}
+
+.SummaryMargin {
+    margin-top: -10px;
+}
+
+.Div {
+    height: 10px;
 }

@@ -12,7 +12,8 @@ const forecast = (latitude, longitude, callback) => {
                 callback(undefined, {
                     current: response.body.currently,   
                     dailySummary: response.body.daily.summary,
-                    dailyData: response.body.daily.data                           
+                    dailyData: response.body.daily.data,
+                    hourlyData: response.body.hourly.data                           
                 });
             }
         });

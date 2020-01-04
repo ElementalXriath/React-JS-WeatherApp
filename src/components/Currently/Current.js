@@ -1,19 +1,19 @@
 import React from 'react';
 
 // CUSTOM - CSS
-import './MainWrapper.css';
+import './Current.css';
 
 // COMPONENTS
-
-import CurrentStats from '../CurrentStats/CurrentStats';
+import CurrentStats from './CurrentStats/CurrentStats';
+import CurrentStatsTime from './CurrentStats/CurrentStatsTime';
+import Scroll from './HourlyScroll/Scroll';
 
 // UTILS
 import iconManager from '../../utils/IconManager/IconManager';
 
 // UI-ICONS
 import { WiHumidity, WiStrongWind, WiRain } from 'weather-icons-react';
-
-import { FaCrosshairs } from 'react-icons/fa';
+import { FaLocationArrow } from 'react-icons/fa';
 
 const mainWrapper = (props) => {
 
@@ -23,7 +23,7 @@ const mainWrapper = (props) => {
     //Return -> 
     return (
                 <div className="container text-center p-2">
-                    <h4 className="text-left Font mt-3"><FaCrosshairs className="h6"/> {props.loc}</h4>
+                    <h4 className="text-left Font mt-3"><FaLocationArrow className="h6"/> {props.loc}</h4>
                     <hr className="Line"/>
                     <div className="row">
                         <div className="col-4 ml-0">           
@@ -31,7 +31,7 @@ const mainWrapper = (props) => {
                                 <span className="MainIcon"> {summaryIcon} </span> 
                                 {props.temp}<span className="Degrees">&deg;</span>
                             </span> <br></br>
-                            <span className="SummaryFont">Feels Like : {props.appTemp} </span>               
+                            <span className="SummaryFont">{props.summary}</span>               
                         </div>
                         <div className="col-8 p-0 text-white">
                             <div className="row h6">                           
@@ -51,20 +51,35 @@ const mainWrapper = (props) => {
                                 </div>                  
                             </div>
                             <hr></hr>
-                            <div className="mt-0">
-                            {props.summary} 
+                            <div className="SummaryMargin">
+                            
                             </div>   
                         </div>                    
                     </div>
-                    <div className="container mt-5 p-0 ml-0">
-                    
-                        <div className="row mt-3">
-                            <div className="col shadow">
-                            <CurrentStats appTemp={props.appTemp} dewPoint={props.dewPoint} pressure={props.pressure}/>
+                    <div className="container mt-3 p-0 ml-0">
+                        <div>
+                            <Scroll hourly={props.hourly}/>
+                        </div>
+                        <div className="Div"></div>
+                       
+                        <div className="row mt-5">
+                            <div className="col">
+                                <div className="card bg-transparent">
+                                <div class="card-header text-left p-1">
+                                    Weather Details
+                                </div>
+                                    <CurrentStats appTemp={props.appTemp} dewPoint={props.dewPoint} pressure={props.pressure}/>
+                                </div>
+                            
                             </div>
                             <div className="col">
-                            <CurrentStats/>
-                            </div>         
+                                <div className="card bg-transparent">
+                                    <div class="card-header text-left p-1">
+                                        Featured
+                                    </div>
+                                    <CurrentStatsTime appTemp={props.appTemp} dewPoint={props.dewPoint} pressure={props.pressure}/>
+                                </div>    
+                            </div>     
                         </div>         
                     </div>    
                 </div>

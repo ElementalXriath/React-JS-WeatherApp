@@ -5,10 +5,10 @@ import './MainView.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // COMPONENTS
-import MainWeather from '../../component/Currently/Current';
+import MainWeather from '../../components/Currently/Current';
 import NavBar from '../../layout/NavBar/NavBar';
-import DailyBox from '../../component/WeeklyForecast/WeeklyBox/WeeklyBox';
-import Tabs from '../../component/Tabs/Tabs'
+import DailyBox from '../../components/WeeklyForecast/WeeklyBox/WeeklyBox';
+import Tabs from '../../components/Tabs/Tabs'
 
 const MainView = () => {
 
@@ -19,6 +19,9 @@ const MainView = () => {
 
     // 7 Day Forecast
     const [dailyWeather, setDailyWeather] = React.useState([]);
+
+    // Hourly Forecast Max 12
+    const [hourlyWeather, setHourlyWeather] = React.useState([]);
 
     // Location / GeoJson
     const [currentLocation, setCurrentLocation] = React.useState('')
@@ -35,6 +38,7 @@ const MainView = () => {
             setDailyWeather(data.forecast.dailyData);
             setCurrentWeather(data.forecast.current);
             setCurrentLocation(data.location);
+            setHourlyWeather(data.forecast.hourlyData);
           })        
           .catch(error => console.log(error));
       };
@@ -68,6 +72,7 @@ const MainView = () => {
           appTemp={currentWeather.apparentTemperature}
           dewPoint={currentWeather.dewPoint}
           pressure={currentWeather.pressure}
+          hourly={hourlyWeather}
           
         /> ;
           break;
