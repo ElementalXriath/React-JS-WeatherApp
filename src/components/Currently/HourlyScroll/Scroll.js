@@ -4,6 +4,9 @@ import './Scroll.css';
 // Components 
 import ScrollItem from './ScrollItem/ScrollItem';
 
+// Icon
+import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
+
 const Scroll = (props) => {
 
     function Unix_timestamp(t)
@@ -33,21 +36,22 @@ const Scroll = (props) => {
 
     return (
         <div className="container ContainerSize p-0">
-            <div className="card bg-transparent">
+            <div className="card bg-transparent p-1 NoBorder">
                 <div className="row">
-                  <div className="col-1">
-v
+                  <div className="col-2 text-center">
+                    <span className="Arrow"><button className="bg-transparent NoBorder"><FaChevronCircleLeft /></button></span>
                   </div>
-                  <div className="col-10">
+                  <div className="col-8">
                       <p>Hourly</p>
                   </div>
-                  <div className="col-1">
-v
+                  <div className="col-2 text-center">
+                    <span className="Arrow mr-3"><button className="bg-transparent NoBorder"><FaChevronCircleRight /></button></span>
                   </div>
                 </div>
-            </div>
-            <div className="card bg-transparent p-0 m-0 NoBorder">
+           
+            <div className="card bg-transparent p-0 m-0 NoBorder mt-3">
                 {hour}
+            </div>
             </div>
         </div>
     )

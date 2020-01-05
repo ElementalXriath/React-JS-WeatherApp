@@ -1,9 +1,8 @@
 import React from 'react';
 import Daily from '../Block/WeeklyBlock';
 import './WeeklyBox.css';
-import Chip from '@material-ui/core/Chip';
-import { FaCrosshairs } from 'react-icons/fa';
 
+import { FaLocationArrow } from 'react-icons/fa';
 const weeklyBox = (props) => {
 
     let daily = (
@@ -24,12 +23,7 @@ const weeklyBox = (props) => {
     return (
         <div className="mt-1 p-0 pb-3">
             <div className="card Label shadow">
-                <h6 className="m-1"><Chip
-                                      icon={<FaCrosshairs/>}
-                                      label="7 Day Forecast"
-                                     
-                                      color="primary"
-                                    /> {props.loc}</h6>
+                <h6 className="m-1"><FaLocationArrow/> {props.loc}</h6>
                 <hr className="mb-0"></hr>
                 {daily}
             </div>

@@ -56,32 +56,36 @@ const mainWrapper = (props) => {
                             </div>   
                         </div>                    
                     </div>
+
                     <div className="container mt-3 p-0 ml-0">
+
                         <div>
                             <Scroll hourly={props.hourly}/>
                         </div>
+
                         <div className="Div"></div>
                        
                         <div className="row mt-5">
                             <div className="col">
-                                <div className="card bg-transparent">
-                                <div class="card-header text-left p-1">
+                                <div className="card bg-transparent p-2">
+                                <div class="card-header text-left p-1 StatHeader">
                                     Weather Details
                                 </div>
                                     <CurrentStats appTemp={props.appTemp} dewPoint={props.dewPoint} pressure={props.pressure}/>
                                 </div>
-                            
                             </div>
-                            <div className="col">
-                                <div className="card bg-transparent">
-                                    <div class="card-header text-left p-1">
+                            <div className="col m-0">
+                                <div className="card bg-transparent p-2">
+                                    <div class="card-header text-left p-1 StatHeader">
                                         Featured
                                     </div>
                                     <CurrentStatsTime appTemp={props.appTemp} dewPoint={props.dewPoint} pressure={props.pressure}/>
                                 </div>    
                             </div>     
-                        </div>         
-                    </div>    
+                        </div>  
+
+                    </div> 
+
                 </div>
         ) 
 

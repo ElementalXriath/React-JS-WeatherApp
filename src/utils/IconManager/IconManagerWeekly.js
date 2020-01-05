@@ -7,19 +7,25 @@ const iconManager = (data) => {
         case "clear-day":
         summaryIcon = <WiDaySunnyOvercast size={40} color='white' />
             break;
-        case "Drizzle":
+        case "clear-night":
+        summaryIcon = <WiDaySunnyOvercast size={40} color='white' />
+            break;
+        case "sleet":
         summaryIcon = <WiSprinkle size={40} color='white' />
             break;
         case "rain":
         summaryIcon = <WiDayRainMix size={40} color='white' />
             break;
-        case "Possible Drizzle":
+        case "fog":
         summaryIcon = <WiDayRainMix size={40} color='white' />
             break;
         case "cloudy":
         summaryIcon = <WiCloudy size={40} color='white' />
             break;
         case "partly-cloudy-day":
+        summaryIcon = <WiDayCloudy size={40} color='white' />
+            break;
+        case "partly-cloudy-night":
         summaryIcon = <WiDayCloudy size={40} color='white' />
             break;
       }

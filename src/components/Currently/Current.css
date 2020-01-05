@@ -72,3 +72,8 @@
 .Div {
     height: 10px;
 }
+
+.StatHeader {
+    background-color: rgba(28, 99, 230, 0.603);
+    color: white;
+}
