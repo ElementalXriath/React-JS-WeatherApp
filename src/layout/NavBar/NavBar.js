@@ -74,6 +74,7 @@ const SearchAppBar = (props) =>{
             className={classes.menuButton}
             color="dark"
             aria-label="open drawer"
+            onClick={props.sideNav}
           >
             <MenuIcon />
           </IconButton>

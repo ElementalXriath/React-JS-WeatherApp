@@ -1,29 +1,32 @@
 import React from 'react'
-import { WiRain, WiStrongWind, WiHumidity, WiDaySunnyOvercast, WiDayCloudy, WiCloudy, WiDayRainMix, WiSprinkle } from "weather-icons-react";
+import { WiRain, WiStrongWind, WiHumidity, WiDaySunnyOvercast, WiDayCloudy, WiCloudy, WiDayRainMix, WiSprinkle, WiSunset } from "weather-icons-react";
 
 const iconManager = (data) => {
     var summaryIcon;
     switch (data) {
-        case "Overcast":
-        summaryIcon = <WiDaySunnyOvercast size={70} color='white' />
+        case "clear-day":
+        summaryIcon = <WiSunset size={40} color='yellow' />
             break;
-        case "Drizzle":
-        summaryIcon = <WiSprinkle size={70} color='white' />
+        case "clear-night":
+        summaryIcon = <WiDaySunnyOvercast size={40} color='white' />
             break;
-        case "Light Rain":
-        summaryIcon = <WiDayRainMix size={70} color='white' />
+        case "sleet":
+        summaryIcon = <WiSprinkle size={40} color='white' />
             break;
-        case "Possible Drizzle":
-        summaryIcon = <WiDayRainMix size={70} color='white' />
+        case "rain":
+        summaryIcon = <WiDayRainMix size={40} color='white' />
             break;
-        case "Mostly Cloudy":
-        summaryIcon = <WiCloudy size={70} color='white' />
+        case "fog":
+        summaryIcon = <WiDayRainMix size={40} color='white' />
             break;
-        case "Partly Cloudy":
-        summaryIcon = <WiDayCloudy size={70} color='white' />
+        case "cloudy":
+        summaryIcon = <WiCloudy size={40} color='white' />
             break;
-        case 'Clear':
-            summaryIcon = <WiDaySunnyOvercast size={70} color='white' />
+        case "partly-cloudy-day":
+        summaryIcon = <WiDayCloudy size={40} color='white' />
+            break;
+        case "partly-cloudy-night":
+        summaryIcon = <WiDayCloudy size={40} color='white' />
             break;
       }
 

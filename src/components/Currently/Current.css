@@ -8,7 +8,7 @@
 
 .Font {
     font-family: 'Abel', sans-serif;
-    font-size: 24px;
+    font-size: 17px;
     font-weight: 200;
     color: white;
 }
@@ -32,8 +32,8 @@
 }
 
 .MainIcon {
-    font-size: 50px;
-    margin: -20px;
+    font-size: large;
+  
 }
 
 .LowMargin {
@@ -51,10 +51,12 @@
 .SummaryFont {
     font-size: 14px;
     color: white;
+    
 }
 
 .Degrees {
-    font-size: 25px;
+    font-size: 20px;
+    
 }
 
 .ScrollBox {

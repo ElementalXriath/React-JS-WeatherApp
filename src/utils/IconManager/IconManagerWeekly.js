@@ -1,11 +1,11 @@
 import React from 'react'
-import { WiRain, WiStrongWind, WiHumidity, WiDaySunnyOvercast, WiDayCloudy, WiCloudy, WiDayRainMix, WiSprinkle } from "weather-icons-react";
+import { WiRain, WiStrongWind, WiHumidity, WiDaySunnyOvercast, WiDayCloudy, WiCloudy, WiDayRainMix, WiSprinkle, WiSunset } from "weather-icons-react";
 
 const iconManager = (data) => {
     var summaryIcon;
     switch (data) {
         case "clear-day":
-        summaryIcon = <WiDaySunnyOvercast size={40} color='white' />
+        summaryIcon = <WiSunset size={40} color='yellow' />
             break;
         case "clear-night":
         summaryIcon = <WiDaySunnyOvercast size={40} color='white' />

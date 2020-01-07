@@ -32,6 +32,7 @@ const useStyles = makeStyles({
         <Tab label="Currently" onClick={props.switchCurrently}/>
         <Tab label="Weekly" onClick={props.switchWeekly}/>
         <Tab label="Radar" onClick={props.switchRadar}/>
+        <Tab label="News" onClick={props.switchNews}/>
       </Tabs>
     </Paper>
   );

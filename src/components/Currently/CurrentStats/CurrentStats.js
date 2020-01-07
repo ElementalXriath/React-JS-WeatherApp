@@ -47,27 +47,15 @@ const FolderList = (props) => {
   return (
     <List className={classes.root}>
       <ListItem>
-        <ListItemAvatar>
-          <Avatar className={classes.bg}>
-            <WiThermometer className="h3"/>
-          </Avatar>
-        </ListItemAvatar>
+     
         <ListItemText primary={appTempPrimary} secondary={appTempSecondary} />
       </ListItem>
       <ListItem className={classes.secondary}>
-        <ListItemAvatar>
-          <Avatar className={classes.bg}>
-            <WiFog className="h3" />
-          </Avatar>
-        </ListItemAvatar>
+  
         <ListItemText primary={dewPointPrimary} secondary={dewPointSecondary} /> 
       </ListItem>
       <ListItem>
-        <ListItemAvatar>
-          <Avatar className={classes.bg}>
-          < WiBarometer className="h3"/>
-          </Avatar>
-        </ListItemAvatar>
+   
         <ListItemText primary={pressurePrimary} secondary={pressureSecondary} /> 
       </ListItem>
     </List>

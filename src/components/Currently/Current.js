@@ -18,7 +18,7 @@ import { FaLocationArrow } from 'react-icons/fa';
 const mainWrapper = (props) => {
 
     // Icon Manager
-    let summaryIcon = iconManager(props.summary);
+    let summaryIcon = iconManager(props.icon);
 
     //Return -> 
     return (
@@ -26,6 +26,7 @@ const mainWrapper = (props) => {
                     <h4 className="text-left Font mt-3"><FaLocationArrow className="h6"/> {props.loc}</h4>
                     <hr className="Line"/>
                     <div className="row">
+
                         <div className="col-4 ml-0">           
                             <span className="text-light TempFont">
                                 <span className="MainIcon"> {summaryIcon} </span> 
@@ -33,6 +34,7 @@ const mainWrapper = (props) => {
                             </span> <br></br>
                             <span className="SummaryFont">{props.summary}</span>               
                         </div>
+
                         <div className="col-8 p-0 text-white">
                             <div className="row h6">                           
                                 <div className="col">
@@ -41,8 +43,8 @@ const mainWrapper = (props) => {
                                 </div>
 
                                 <div className="col">
-                                <WiStrongWind size={32} color='yellow' /><h6 className="DataTags">Wind Speed</h6>
-                                    {props.windSpeed} Mph
+                                <WiStrongWind size={32} color='yellow' /><h6 className="DataTags">WS</h6>
+                                   <div>{props.windSpeed}</div> 
                                 </div>
 
                                 <div className="col">
@@ -50,11 +52,9 @@ const mainWrapper = (props) => {
                                     {props.rain} %
                                 </div>                  
                             </div>
-                            <hr></hr>
-                            <div className="SummaryMargin">
-                            
-                            </div>   
-                        </div>                    
+                            <hr></hr>          
+                        </div>   
+
                     </div>
 
                     <div className="container mt-3 p-0 ml-0">
@@ -66,18 +66,18 @@ const mainWrapper = (props) => {
                         <div className="Div"></div>
                        
                         <div className="row mt-5">
-                            <div className="col">
+                            <div className="col mr-0">
                                 <div className="card bg-transparent p-2">
                                 <div class="card-header text-left p-1 StatHeader">
-                                    Weather Details
+                                 Details
                                 </div>
                                     <CurrentStats appTemp={props.appTemp} dewPoint={props.dewPoint} pressure={props.pressure}/>
                                 </div>
                             </div>
-                            <div className="col m-0">
+                            <div className="col ml-0">
                                 <div className="card bg-transparent p-2">
                                     <div class="card-header text-left p-1 StatHeader">
-                                        Featured
+                                     Featured
                                     </div>
                                     <CurrentStatsTime appTemp={props.appTemp} dewPoint={props.dewPoint} pressure={props.pressure}/>
                                 </div>    
