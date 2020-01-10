@@ -29,9 +29,9 @@ const useStyles = makeStyles({
         textColor="white"
         centered
       >
-        <Tab label="Currently" onClick={props.switchCurrently}/>
-        <Tab label="Weekly" onClick={props.switchWeekly}/>
-        <Tab label="Radar" onClick={props.switchRadar}/>
+        <Tab label="Currently" />
+        <Tab label="Weekly" />
+        <Tab label="Radar" />
       </Tabs>
     </Paper>
   );

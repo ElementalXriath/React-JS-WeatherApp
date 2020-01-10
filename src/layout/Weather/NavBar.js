@@ -72,14 +72,14 @@ const SearchAppBar = (props) =>{
           <IconButton
             edge="start"
             className={classes.menuButton}
-            color="dark"
+            
             aria-label="open drawer"
             onClick={props.sideNav}
           >
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-                Sky Watch
+                Sky Watch : Weather
           </Typography>
           <Button variant="contained" color="primary" onClick={props.click} className="m-1">
             Search

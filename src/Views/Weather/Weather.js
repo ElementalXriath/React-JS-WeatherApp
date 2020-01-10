@@ -1,39 +1,16 @@
 import React from 'react' ;
 
-// CSS
-import './MainView.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 // COMPONENTS
 import MainWeather from '../../components/Currently/Current';
-import NavBar from '../../layout/NavBar/NavBar';
+import NavBar from '../../layout/Weather/NavBar';
 import DailyBox from '../../components/WeeklyForecast/WeeklyBox/WeeklyBox';
 import Tabs from '../../components/Tabs/Tabs';
 import Radar from '../../components/Radar/Radar';
 import ReactLoading from "react-loading";
 
-// Material Side Drawer
-import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 
-const useStyles = makeStyles({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
-});
 
-const MainView = () => {
+const MainView = (props) => {
 
   // GLOBAL STATE CONTROLLER - FULL APPLICATION - HOOKS AND CONTEXT
 
@@ -57,6 +34,7 @@ const MainView = () => {
     // UI Visibility
     const [toggleCurrent, setToggleCurrent] = React.useState('Currently');
 
+    // Data
     const fetchWeather = () => {
         fetch('http://localhost:3000/weather?address=' + weatherLocation)
           .then(response => response.json())         
@@ -69,7 +47,7 @@ const MainView = () => {
           .catch(error => console.log(error));
       };
       
-   
+      // Effects
       React.useEffect(() => {
         setTimeout(() => {
           fetch("https://jsonplaceholder.typicode.com/posts")
@@ -83,6 +61,8 @@ const MainView = () => {
         fetchWeather()
       }, [weatherLocation]);
 
+
+      // Handlers
       const handleChange = (event) => {
         setSearchLocation(event.target.value)
       };
@@ -92,39 +72,6 @@ const MainView = () => {
         setSearchLocation('')
       };
 
-      // Side Bar
-      const classes = useStyles();
-      const [state, setState] = React.useState({
-      left: false,
-      });
-
-      const toggleDrawer = (side, open) => event => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-          return;
-        }
-
-        setState({ ...state, [side]: open });
-      };
-
-      const sideList = side => (
-        <div
-          className={classes.list}
-          role="presentation"
-          onClick={toggleDrawer(side, false)}
-          onKeyDown={toggleDrawer(side, false)}
-        >
-          <List>
-            {['Weather', 'Stocks', 'News', 'Horoscope'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-        </div>
-      );
-    
       // UI TAB - Controller
 
       let tab = null;
@@ -133,14 +80,7 @@ const MainView = () => {
         case 'Currently':
             tab =  <MainWeather 
             loc={currentLocation} 
-            temp={currentWeather.temperature} 
-            humidity={currentWeather.humidity}
-            summary={currentWeather.summary}
-            windSpeed={currentWeather.windSpeed}
-            rain={currentWeather.precipProbability}
-            appTemp={currentWeather.apparentTemperature}
-            dewPoint={currentWeather.dewPoint}
-            pressure={currentWeather.pressure}
+            data={currentWeather}   
             hourly={hourlyWeather}
             icon={currentWeather.icon}
           
@@ -176,26 +116,23 @@ const MainView = () => {
                         click={handleSubmit} 
                         change={handleChange}
                         value={search}
-                        sideNav={toggleDrawer('left', true)}
-                      />
-
-                      <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
-                        {sideList('left')}
-                      </Drawer>
-
-                      <Tabs 
-                        switchWeekly={tabSwitchWeekly} 
-                        switchCurrently={tabSwitchCurrently}
-                        switchRadar={tabSwitchRadar}
+                        sideNav={props.nav}
                       />
 
                     {!done ? (
                       <div className="container text-center"> <ReactLoading type={"bars"} color={"white"} /> </div>                  
                         ) : (
                        //  UI Tabs
+                      <div>
+                         <Tabs 
+                        switchWeekly={tabSwitchWeekly} 
+                        switchCurrently={tabSwitchCurrently}
+                        switchRadar={tabSwitchRadar}
+                      />
                             <div className="container">
                               {tab}
                             </div>
+                      </div>
                       )}
               </div>
         

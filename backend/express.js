@@ -3,6 +3,7 @@ const express = require('express');
 // GeoCoding - Forecast - DarkSky Api
 const forecast = require('./api/forecast');
 const geocode = require('../backend/utils/geocode');
+const news = require('./api/news');
 
 const app = express();
 
@@ -34,7 +35,18 @@ app.get('/weather', (req, res) => {
             })
         })
     })
-});  
+});
+
+app.get('/news', (req, res) => {
+    news((error, usaNews) => {
+        if (error) {
+            return res.send({error})
+        }
+        res.send({
+            usNews: usaNews
+        })
+    })
+}) 
 
 app.get('*', (req, res) => {
     res.send("404 Error")

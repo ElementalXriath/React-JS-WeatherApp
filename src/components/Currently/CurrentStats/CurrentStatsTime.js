@@ -34,13 +34,13 @@ const FolderList = (props) => {
   let pressure = props.pressure;
 
 
-    let appTempSecondary = <span className="text-white">Apparent</span>
+    let appTempSecondary = <span className="text-white">Cloud Cover</span>
     let appTempPrimary = <span className="text-primary">{appTemp}</span>
 
-    let dewPointSecondary = <span className="text-white">Dew Point</span>
+    let dewPointSecondary = <span className="text-white">UV Index</span>
     let dewPointPrimary = <span className="text-primary">{dewPoint}</span>
 
-    let pressureSecondary = <span className="text-white">Pressure</span>
+    let pressureSecondary = <span className="text-white">Ozone</span>
     let pressurePrimary = <span className="text-primary">{pressure}</span>
     
 

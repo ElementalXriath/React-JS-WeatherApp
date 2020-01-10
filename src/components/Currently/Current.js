@@ -30,26 +30,26 @@ const mainWrapper = (props) => {
                         <div className="col-4 ml-0">           
                             <span className="text-light TempFont">
                                 <span className="MainIcon"> {summaryIcon} </span> 
-                                {props.temp}<span className="Degrees">&deg;</span>
+                                {props.data.temperature}<span className="Degrees">&deg;</span>
                             </span> <br></br>
-                            <span className="SummaryFont">{props.summary}</span>               
+                            <span className="SummaryFont">{props.data.summary}</span>               
                         </div>
 
                         <div className="col-8 p-0 text-white">
                             <div className="row h6">                           
                                 <div className="col">
                                 <WiHumidity size={32} color='lightgreen' /><h6 className="DataTags">Humidity</h6>
-                                    {props.humidity} %
+                                    {props.data.humidity} %
                                 </div>
 
                                 <div className="col">
                                 <WiStrongWind size={32} color='yellow' /><h6 className="DataTags">WS</h6>
-                                   <div>{props.windSpeed}</div> 
+                                   <div>{props.data.windSpeed}</div> 
                                 </div>
 
                                 <div className="col">
                                 <WiRain size={32} color='aqua' /><h6 className="DataTags">Precipitation</h6>
-                                    {props.rain} %
+                                    {props.data.rain} %
                                 </div>                  
                             </div>
                             <hr></hr>          
@@ -71,7 +71,7 @@ const mainWrapper = (props) => {
                                 <div class="card-header text-left p-1 StatHeader">
                                  Details
                                 </div>
-                                    <CurrentStats appTemp={props.appTemp} dewPoint={props.dewPoint} pressure={props.pressure}/>
+                                    <CurrentStats appTemp={props.data.apparentTemperature} dewPoint={props.data.dewPoint} pressure={props.data.pressure}/>
                                 </div>
                             </div>
                             <div className="col ml-0">
@@ -79,7 +79,7 @@ const mainWrapper = (props) => {
                                     <div class="card-header text-left p-1 StatHeader">
                                      Featured
                                     </div>
-                                    <CurrentStatsTime appTemp={props.appTemp} dewPoint={props.dewPoint} pressure={props.pressure}/>
+                                    <CurrentStatsTime appTemp={props.data.cloudCover} dewPoint={props.data.uvIndex} pressure={props.data.ozone}/>
                                 </div>    
                             </div>     
                         </div>  
