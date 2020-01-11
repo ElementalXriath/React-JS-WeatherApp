@@ -11,6 +11,7 @@
     "express": "^4.17.1",
     "jest": "^24.9.0",
     "react": "^16.11.0",
+    "react-circular-progressbar": "^2.0.3",
     "react-dom": "^16.11.0",
     "react-fade-in": "^0.1.7",
     "react-horizontal-scrolling-menu": "^0.7.4",

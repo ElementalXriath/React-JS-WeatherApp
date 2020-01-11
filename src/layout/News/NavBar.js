@@ -67,7 +67,7 @@ const SearchAppBar = (props) =>{
   return (
     <div className={classes.root}>
       <AppBar position="static"
-              color="secondary">
+              color="white">
         <Toolbar >
           <IconButton
             edge="start"

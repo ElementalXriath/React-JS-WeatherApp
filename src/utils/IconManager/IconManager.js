@@ -11,10 +11,10 @@ const iconManager = (data) => {
         summaryIcon = <WiDaySunnyOvercast size={40} color='white' />
             break;
         case "sleet":
-        summaryIcon = <WiSprinkle size={40} color='white' />
+        summaryIcon = <WiSprinkle size={40} color='aqua' />
             break;
         case "rain":
-        summaryIcon = <WiDayRainMix size={40} color='white' />
+        summaryIcon = <WiDayRainMix size={40} color='aqua' />
             break;
         case "fog":
         summaryIcon = <WiDayRainMix size={40} color='white' />

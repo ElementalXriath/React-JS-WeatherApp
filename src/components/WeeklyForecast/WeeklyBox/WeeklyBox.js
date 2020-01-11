@@ -7,7 +7,7 @@ const weeklyBox = (props) => {
 
     let daily = (
         <div>
-          {props.data.slice(0, 7).map((day, index) => {
+          {props.data.slice(0, 6).map((day, index) => {
             return <Daily 
               tempHigh={day.temperatureHigh}
               tempLow={day.temperatureLow}

@@ -3,7 +3,8 @@ import './WeeklyBlock.css';
 import { WiFahrenheit, WiRaindrop } from "weather-icons-react";
 import TempGauge from '../TempGauge/TampGauge';
 
-import iconManager from '../../../utils/IconManager/IconManagerWeekly';
+
+import iconManager from '../../../utils/IconManager/IconManager';
 
 
 const weeklyBlock = (props) => {
@@ -40,17 +41,17 @@ return  (
                       <div className="row p-1">
 
                           <div className="col-3">
-                              <span className="h6">{summaryIcon}</span><br></br> <span className="Day">{day}</span>
+                              <span className="h6">{summaryIcon}</span><br></br> <span className="Day ml-3 mt-0">{day}</span>
                           </div>
 
                          
                           <div className="col-2"> 
-                          <WiRaindrop size={30} color='white' />
-                              <span className="h6">{Math.floor(props.percip)}%</span>              
+                          <WiRaindrop size={28} color='white' />
+                              <span className="Rain">{Math.floor(props.percip)}%</span>              
                           </div>
                           
                           <div className="col-7 text-right">
-                           <span><span className="TempLabel">Temp</span> {props.tempHigh}<WiFahrenheit size={24} color='white' /></span> <br></br> <TempGauge value={props.tempHigh} />
+                           <span><span className="TempLabel">Temp</span> <span className="Temperature">{props.tempHigh}</span> <WiFahrenheit size={24} color='white' /></span> <br></br> <TempGauge value={props.tempHigh} />
                           </div>   
 
                         </div>

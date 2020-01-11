@@ -85,8 +85,7 @@ const App = () => {
                   <News nav={toggleDrawer('left', true)}/>
                 </div>
               </Route>
-            </Switch>
-            
+            </Switch>     
           </div>
         </Router>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Utils
-import iconManager from '../../../../utils/IconManager/IconManagerWeekly';
+import iconManager from '../../../../utils/IconManager/IconManager';
 import { WiThermometer, WiThermometerExterior, WiSprinkle } from "weather-icons-react";
 
 const ScrollItem = (props) => {
@@ -112,8 +112,8 @@ const ScrollItem = (props) => {
         case false:
         side =  <div className="card m-0 bg-transparent text-white text-center" style={{border: "none"}}>
                     <a className="m-0" onClick={handleFlip}><span><WiThermometer /></span> {Math.ceil(props.tempHigh)}</a>
-                    <a className="m-0" onClick={handleFlip}><span><WiThermometerExterior /></span> {Math.ceil(props.tempHigh)}</a>
-                    <a className="m-0" onClick={handleFlip}><span><WiSprinkle /></span> {props.percip}%</a>
+                    <a className="m-0" onClick={handleFlip}><span><WiThermometerExterior /></span> {Math.round(props.tempHigh)}</a>
+                    <a className="m-0" onClick={handleFlip}><span><WiSprinkle /></span> {props.percip * 100}%</a>
                    
                 </div>
         break;

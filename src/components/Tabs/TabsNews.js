@@ -7,7 +7,7 @@ import Tab from '@material-ui/core/Tab';
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.521)',
+    backgroundColor: 'rgba(0, 0, 0, 0.721)',
     color: 'white'
   },
 });
@@ -25,11 +25,11 @@ const useStyles = makeStyles({
       <Tabs
         value={value}
         onChange={handleChange}
-        indicatorColor="primary"
+        indicatorColor="secondary"
         textColor="white"
         centered
       >
-        <Tab label="Currently" />
+        <Tab label="Headlines" />
         <Tab label="Weekly" />
         <Tab label="Radar" />
       </Tabs>

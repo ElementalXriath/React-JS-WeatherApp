@@ -9,10 +9,10 @@ import CurrentStatsTime from './CurrentStats/CurrentStatsTime';
 import Scroll from './HourlyScroll/Scroll';
 
 // UTILS
-import iconManager from '../../utils/IconManager/IconManager';
+import iconManager from '../../utils/IconManager/IconManagerLarge';
 
 // UI-ICONS
-import { WiHumidity, WiStrongWind, WiRain } from 'weather-icons-react';
+import { WiHumidity, WiStrongWind, WiRain, WiFahrenheit } from 'weather-icons-react';
 import { FaLocationArrow } from 'react-icons/fa';
 
 const mainWrapper = (props) => {
@@ -29,8 +29,8 @@ const mainWrapper = (props) => {
 
                         <div className="col-4 ml-0">           
                             <span className="text-light TempFont">
-                                <span className="MainIcon"> {summaryIcon} </span> 
-                                {props.data.temperature}<span className="Degrees">&deg;</span>
+                                <span className="m-0"> {summaryIcon} </span> 
+                                {props.data.temperature}<WiFahrenheit size={24} color='white' /> 
                             </span> <br></br>
                             <span className="SummaryFont">{props.data.summary}</span>               
                         </div>
@@ -38,18 +38,18 @@ const mainWrapper = (props) => {
                         <div className="col-8 p-0 text-white">
                             <div className="row h6">                           
                                 <div className="col">
-                                <WiHumidity size={32} color='lightgreen' /><h6 className="DataTags">Humidity</h6>
+                                <WiHumidity size={32} color='lightgreen' /><h6 className="DataTags">HM</h6>
                                     {props.data.humidity} %
                                 </div>
-
+                                
                                 <div className="col">
                                 <WiStrongWind size={32} color='yellow' /><h6 className="DataTags">WS</h6>
-                                   <div>{props.data.windSpeed}</div> 
+                                   <div>{props.data.windSpeed} N</div> 
                                 </div>
-
+                                
                                 <div className="col">
-                                <WiRain size={32} color='aqua' /><h6 className="DataTags">Precipitation</h6>
-                                    {props.data.rain} %
+                                <WiRain size={32} color='aqua' /><h6 className="DataTags">RC</h6>
+                                    {props.data.precipProbability} %
                                 </div>                  
                             </div>
                             <hr></hr>          

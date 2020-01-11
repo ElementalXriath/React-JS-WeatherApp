@@ -28,10 +28,11 @@ const useStyles = makeStyles({
         indicatorColor="primary"
         textColor="white"
         centered
-      >
-        <Tab label="Currently" onClick={props.switchCurrently}/>
+      >     
+        <Tab label="Current" onClick={props.switchCurrently}/>
         <Tab label="Weekly" onClick={props.switchWeekly}/>
         <Tab label="Radar" onClick={props.switchRadar}/>
+        <Tab label="Alerts" onClick={props.switchRadar}/>
       </Tabs>
     </Paper>
   );
