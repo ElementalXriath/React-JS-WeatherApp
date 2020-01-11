@@ -113,7 +113,7 @@ const ScrollItem = (props) => {
         side =  <div className="card m-0 bg-transparent text-white text-center" style={{border: "none"}}>
                     <a className="m-0" onClick={handleFlip}><span><WiThermometer /></span> {Math.ceil(props.tempHigh)}</a>
                     <a className="m-0" onClick={handleFlip}><span><WiThermometerExterior /></span> {Math.round(props.tempHigh)}</a>
-                    <a className="m-0" onClick={handleFlip}><span><WiSprinkle /></span> {props.percip * 100}%</a>
+                    <a className="m-0" onClick={handleFlip}><span><WiSprinkle /></span> {Math.round(props.percip * 100)}%</a>
                    
                 </div>
         break;

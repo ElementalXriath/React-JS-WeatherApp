@@ -1,0 +1,12 @@
+.Img {
+    height: 34%;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.Card {
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.79);
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.603);
+}

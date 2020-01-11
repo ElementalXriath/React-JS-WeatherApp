@@ -81,7 +81,7 @@ const SearchAppBar = (props) =>{
           <Typography className={classes.title} variant="h6" noWrap>
                 Sky Watch : News
           </Typography>
-          <Button variant="contained" color="secondary" onClick={props.click} className="m-1">
+          <Button variant="contained" color="primary" onClick={props.click} className="m-1">
             Search
           </Button>
           <div className={classes.search}>

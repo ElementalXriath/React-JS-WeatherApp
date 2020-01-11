@@ -49,7 +49,7 @@ const mainWrapper = (props) => {
                                 
                                 <div className="col">
                                 <WiRain size={32} color='aqua' /><h6 className="DataTags">RC</h6>
-                                    {props.data.precipProbability} %
+                                    {Math.round(props.data.precipProbability * 100)} %
                                 </div>                  
                             </div>
                             <hr></hr>          

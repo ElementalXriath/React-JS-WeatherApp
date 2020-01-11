@@ -47,7 +47,7 @@ return  (
                          
                           <div className="col-2"> 
                           <WiRaindrop size={28} color='white' />
-                              <span className="Rain">{Math.floor(props.percip)}%</span>              
+                              <span className="Rain">{Math.round(props.percip * 100)}%</span>              
                           </div>
                           
                           <div className="col-7 text-right">

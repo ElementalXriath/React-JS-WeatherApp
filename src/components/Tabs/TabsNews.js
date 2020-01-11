@@ -25,7 +25,7 @@ const useStyles = makeStyles({
       <Tabs
         value={value}
         onChange={handleChange}
-        indicatorColor="secondary"
+        indicatorColor="primary"
         textColor="white"
         centered
       >

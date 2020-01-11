@@ -14,7 +14,7 @@ const iconManager = (data) => {
         summaryIcon = <WiSprinkle size={40} color='aqua' />
             break;
         case "rain":
-        summaryIcon = <WiDayRainMix size={40} color='aqua' />
+        summaryIcon = <WiRain size={40} color='aqua' />
             break;
         case "fog":
         summaryIcon = <WiDayRainMix size={40} color='white' />
